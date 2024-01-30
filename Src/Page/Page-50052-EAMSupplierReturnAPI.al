@@ -1,7 +1,7 @@
 page 50052 "EAM Supplier Return API"
 {
     PageType = List;
-    SourceTable = "EAM Transaction";
+    SourceTable = "EAM Transaction";//
 
     layout
     {
@@ -51,13 +51,13 @@ page 50052 "EAM Supplier Return API"
 
     trigger OnModifyRecord(): Boolean
     begin
-         Rec."Transaction Type" :=  Rec."Transaction Type"::"Purchase Return Order";
+        Rec."Transaction Type" := Rec."Transaction Type"::"Purchase Return Order";
     end;
 
     trigger OnNewRecord(BelowxRec: Boolean)
     begin
-         Rec."Transaction Type" :=  Rec."Transaction Type"::"Purchase Return Order";
-         Rec."Date Time" := CURRENTDATETIME;
+        Rec."Transaction Type" := Rec."Transaction Type"::"Purchase Return Order";
+        Rec."Date Time" := CURRENTDATETIME;
     end;
 }
 
